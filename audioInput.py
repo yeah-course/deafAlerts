@@ -20,4 +20,5 @@ def inputAudio():
 rec = inputAudio()
 
 wav.write("output.wav", fs, rec)
+print("Peak amplitude:", np.max(np.abs(rec)))
 

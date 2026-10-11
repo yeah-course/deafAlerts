@@ -10,7 +10,7 @@ import tkinter as tk
 from tkinter import messagebox
 
 # Load the model.
-model = hub.load('https://tfhub.dev/google/yamnet/1')
+model = hub.load("yamnet_model")
 
 # Find the name of the class with the top score when mean-aggregated across frames.
 def class_names_from_csv(class_map_csv_text):
@@ -35,8 +35,7 @@ def ensure_sample_rate(original_sample_rate, waveform,
     waveform = scipy.signal.resample(waveform, desired_length)
   return desired_sample_rate, waveform
 
-# wav_file_name = 'speech_whistling2.wav'
-wav_file_name = 'meow.wav'
+wav_file_name = 'test_normalized.wav'
 sample_rate, wav_data = wavfile.read(wav_file_name, 'rb')
 sample_rate, wav_data = ensure_sample_rate(sample_rate, wav_data)
 
